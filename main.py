@@ -5,25 +5,20 @@ def main():
     ##################################################
     
     begin = int(input('begin: '))
+    if begin <= 1:
+        begin = int(input('value must be greater than 1: '))
     end = int(input('end: '))
     if begin > end:
         end = int(input('please enter a value that is greater than the first: '))
 
-    x = begin
     n = 2
     m = 0
-    while x >= begin and x <= end: #dividing, if get whole number, move on to next number // if get decimal, that is prime (?) // go until dividing by end
-        while n >= 2 and n <= int((x ** (1 / 2)) + 1):
-            m = x % n
-            if m == 0:
-                break
-            
-            while m != 0:
-               #plist.append(x) // if x is prime, add it to the list 
-                if m == 0 :
-                    break
-            n = n + 1    
-        x = x + 1    
+    while begin <= end: #dividing, if get whole number, move on to next number // if get decimal, that is prime (?) // go until dividing by end
+        for n in range(n >= 2 and n <= int((begin ** (1 / 2)) + 1)):
+            m = begin % n
+            if m != 0:
+                plist.append(begin) # if x is prime, add it to the list    
+        begin = begin + 1    
             
     print (plist)
     return plist
