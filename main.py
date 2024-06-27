@@ -16,9 +16,12 @@ def main():
     while begin <= end: #dividing, if get whole number, move on to next number // if get decimal, that is prime (?) // go until dividing by end
         for n in range(2, int((begin ** (1 / 2)) + 1)):
             m = begin % n
-            if m != 0:
+            if m == 0:
+                begin = begin + 1
+            else:
                 plist.append(begin) # if x is prime, add it to the list    
-        begin = begin + 1    
+                begin = begin + 1
+            
             
     print (plist)
     return plist
